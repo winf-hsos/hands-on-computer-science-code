@@ -1,2 +1,3 @@
-# hands-on-computer-science-code
-The code examples from the book "Hands-On Computer Science"
+# Hands-On Computer Science - Codebeispiele
+
+Dieses GitHub-Repository enthält die Codebeispiele zum Buch *Hands-On Computer Science" von Prof. Dr. Nicolas Meseth an der Hochschule Osnabrück.
