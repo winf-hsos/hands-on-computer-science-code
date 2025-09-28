@@ -4,7 +4,6 @@ from tinkerforge.bricklet_oled_128x64_v2 import BrickletOLED128x64V2
 import random
 import time
 
-# Verbindung
 ipcon = IPConnection()
 ipcon.connect('localhost', 4223)
 

@@ -9,45 +9,19 @@ ipcon.connect('localhost', 4223)
 ir = BrickletDistanceIRV2('2a7S', ipcon)
 led = BrickletRGBLEDV2('ZEL', ipcon)
 
-MESSAGE_LENGTH = 5 # Anzahl Bits pro Buchstabe
+MESSAGE_LENGTH = 7 # Anzahl Bits pro Buchstabe
 bits = ""
 text = ""
 last_distance = 0
 receiving = False
 
-# Dictionary mit 0–25 => A–Z und 26 => Leerzeichen
-SYMBOLS = {}
-SYMBOLS[0] = "A"
-SYMBOLS[1] = "B"
-SYMBOLS[2] = "C"
-SYMBOLS[3] = "D"
-SYMBOLS[4] = "E"
-SYMBOLS[5] = "F"
-SYMBOLS[6] = "G"
-SYMBOLS[7] = "H"
-SYMBOLS[8] = "I"
-SYMBOLS[9] = "J"
-SYMBOLS[10] = "K"
-SYMBOLS[11] = "L"
-SYMBOLS[12] = "M"
-SYMBOLS[13] = "N"
-SYMBOLS[14] = "O"
-SYMBOLS[15] = "P"
-SYMBOLS[16] = "Q"
-SYMBOLS[17] = "R"
-SYMBOLS[18] = "S"
-SYMBOLS[19] = "T"
-SYMBOLS[20] = "U"
-SYMBOLS[21] = "V"
-SYMBOLS[22] = "W"
-SYMBOLS[23] = "X"
-SYMBOLS[24] = "Y"
-SYMBOLS[25] = "Z"
-SYMBOLS[26] = " "
-
 def decode_letter(bits):
+    # Füge links eine 0 hinzu, damit es 8 Bits sind
+    bits = "0" + bits
+
+    # Konvertiere Binärstring in Dezimalzahl und dann in ASCII-Zeichen
     decimal = int(bits, 2)
-    return SYMBOLS.get(decimal, "?")
+    return chr(decimal)
 
 while True:
     distance = ir.get_distance()
