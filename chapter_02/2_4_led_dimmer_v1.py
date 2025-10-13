@@ -3,13 +3,12 @@ from tinkerforge.bricklet_rotary_encoder_v2 import BrickletRotaryEncoderV2
 from tinkerforge.bricklet_rgb_led_v2 import BrickletRGBLEDV2
 
 ipcon = IPConnection()
-ipcon.connect('localhost', 4223)
-knob = BrickletRotaryEncoderV2('WZd', ipcon) 
-led = BrickletRGBLEDV2('ZG1', ipcon)
+ipcon.connect("localhost", 4223)
+knob = BrickletRotaryEncoderV2("<YOUR_UID>", ipcon)
+led = BrickletRGBLEDV2("<YOUR_UID>", ipcon)
 
 knob.reset()
 last_count = 0
-print(last_count)
 
 while True:
     new_count = knob.get_count(reset=False)
