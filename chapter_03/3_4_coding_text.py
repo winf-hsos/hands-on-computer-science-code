@@ -4,10 +4,10 @@ from tinkerforge.bricklet_rgb_led_v2 import BrickletRGBLEDV2
 import time
 
 ipcon = IPConnection()
-ipcon.connect('localhost', 4223)
+ipcon.connect("localhost", 4223)
 
-ir = BrickletDistanceIRV2('2a7S', ipcon)
-led = BrickletRGBLEDV2('ZEL', ipcon)
+ir = BrickletDistanceIRV2("<YOUR_UID>", ipcon)
+led = BrickletRGBLEDV2("<YOUR_UID>", ipcon)
 
 MESSAGE_LENGTH = 5 # Anzahl Bits pro Buchstabe
 bits = ""

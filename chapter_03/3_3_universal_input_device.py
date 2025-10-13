@@ -3,8 +3,8 @@ from tinkerforge.bricklet_distance_ir_v2 import BrickletDistanceIRV2
 import time
 
 ipcon = IPConnection()
-ipcon.connect('localhost', 4223)
-ir = BrickletDistanceIRV2('2a7S', ipcon) 
+ipcon.connect("localhost", 4223)
+ir = BrickletDistanceIRV2("<YOUR_UID>", ipcon)
 
 last_distance = 0
 receiving = False
