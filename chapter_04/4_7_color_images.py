@@ -14,7 +14,7 @@ sheet = workbook["Super Mario"]
 bitmap = []
 for row in sheet.iter_rows():
     for cell in row:
-        color = getattr(cell.fill.fgColor, "rgb", None)
+        color = cell.fill.fgColor.rgb
         color = color[2:] 
         r = int(color[0:2], 16)
         g = int(color[2:4], 16)

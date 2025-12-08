@@ -14,7 +14,7 @@ sheet = workbook["Darth Vader"]
 bits = []
 for row in sheet.iter_rows():
     for cell in row:
-        color = getattr(cell.fill.fgColor, "rgb", None)
+        color = cell.fill.fgColor.rgb
         if color == "FF000000":
             bits.append(1)
         else:
